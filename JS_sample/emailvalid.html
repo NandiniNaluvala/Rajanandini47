@@ -1,0 +1,20 @@
+<input type="text" id="email" placeholder="Enter your email">
+<p id="emailMessage"></p>
+
+<script>
+    let emailInput = document.getElementById("email");
+    let emailMessage = document.getElementById("emailMessage");
+
+    emailInput.addEventListener("input", function () {
+        let email = emailInput.value.trim();
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (emailRegex.test(email)) {
+            emailMessage.textContent = "Valid email";
+            emailMessage.style.color = "green";
+        } else {
+            emailMessage.textContent = "Invalid email";
+            emailMessage.style.color = "red";
+        }
+    });
+</script>
